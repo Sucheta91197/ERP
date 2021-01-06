@@ -52,9 +52,10 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="form-group">
-													<input type="hidden" class="form-control" value="<%=budget.getBudgetId()%>" name="budgetId" />
-													<label>Budget Name</label> <input type="text"
-														class="form-control" placeholder="enter budget name"
+													<input type="hidden" class="form-control"
+														value="<%=budget.getBudgetId()%>" name="budgetId" /> <label>Budget
+														Name</label> <input type="text" class="form-control"
+														placeholder="enter budget name"
 														value="<%=budget.getBudgetName()%>" name="budgetName" />
 												</div>
 											</div>
@@ -72,7 +73,6 @@
 												<div class="form-group">
 													<label>Select Department</label>
 													<c:set var="department" value="<%=budget.getDepartment()%>"></c:set>
-
 													<select class="form-control" name="department">
 
 														<option

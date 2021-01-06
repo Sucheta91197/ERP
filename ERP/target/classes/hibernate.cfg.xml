@@ -5,13 +5,14 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
-		<property name="connection.url">jdbc:mysql://103.118.16.155:3306/cardholo_ERP</property>
-		<property name="connection.username">cardholo_erp</property>
-		<property name="connection.password">Hu2#2(Hsiw.]</property>
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/erp</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<mapping class="com.erp.entites.AccountPayable"/>
 		<mapping class="com.erp.entites.Budget"/>
+		<mapping class="com.erp.entites.BillOfMaterial"/>
 	</session-factory>
 </hibernate-configuration>  

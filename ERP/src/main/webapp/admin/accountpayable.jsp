@@ -17,7 +17,7 @@
 		<div class="content-wrapper">
 			<div class="content-header">
 				<div class="container-fluid">
-					<c:if test="${ param.update}">
+					<c:if test="${param.update}">
 						<div class="alert alert-success alert-dismissible">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							updated sucessfully !
@@ -96,11 +96,12 @@
 															type="button" class="btn btn-block btn-secondary">Update</button></a></td>
 												<td><a
 													href="deleteaccountpayable?clientid=<%=accountPayable.getClientId()%>"><button
-															type="button" class="btn btn-block btn-secondary">Delete</button></a></td>
+															type="button" class="btn btn-block btn-secondary" onclick="return toConfirm()">Delete</button></a></td>
 											</tr>
 											<%
 												}
 											%>
+											
 										</tbody>
 									</table>
 								</div>
@@ -119,6 +120,17 @@
 	</div>
 
 	<jsp:include page="script.jsp"></jsp:include>
+	<script>
+		function toConfirm() {
+			
+			if (confirm("sure you want to delete record ?")== true) {
+				return true;
+			} else {
+				
+				return false;
+			}
+		}
+	</script>
 
 </body>
 </html>

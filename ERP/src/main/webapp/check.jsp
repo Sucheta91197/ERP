@@ -18,27 +18,27 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<p>Click the button to delete student record</p>
 
-	<button onclick="toConfirm()">Delete student record</button>
+	<button type="button" id="2" class="delete">Delete</button>
 
-	<p id="student"></p>
 	<script>
-		function toConfirm() {
-			var text;
-			var r = confirm("You clicked on a button to delete student recored. Clik ok ro proceed");
-			if (r == true) 
-			{   $.ajax({
-				  url: "/call?name='gaurav'",
-				
-				  success: success,
-				  dataType: dataType
-				});}
-				else {
-				text = "You clicked on cancel. transaction cancelled.";
-			}
-			document.getElementById("student").innerHTML = text;
-		}
+		$(document).ready(function() {
+			// crating new click event for save button
+			$(".delete").click(function() {
+				var id = +this.id;
+				$.ajax({
+					url : "delete-ajax.jsp",
+					type : "post",
+					data : {
+						id : id,
+					},
+					success : function(data) {
+						alert(data); // alerts the response from jsp
+						location.reload();
+					}
+				});
+			});
+		});
 	</script>
 </body>
 </html>
